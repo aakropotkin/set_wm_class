@@ -1,8 +1,6 @@
 {
   description = "Add X11 tool set_wm_class";
-
   inputs.nixpkgs.follows = "nix/nixpkgs";
-
   outputs = { self, nix, nixpkgs, ... }: {
 
     overlays.set_wm_class = import ./overlay.nix;
@@ -18,6 +16,5 @@
       nixpkgs.overlays = [self.overlay];
     };
     nixosModule = self.nixosModules.set_wm_class;
-
   };
 }
