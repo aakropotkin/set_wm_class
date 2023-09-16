@@ -1,9 +1,9 @@
-{ stdenv, libX11, pkgconfig, lib }:
+{ stdenv, libX11, pkg-config, lib }:
 stdenv.mkDerivation {
   name = "set_wm_class";
   src = ./.;
   version = "1.0.0";
-  nativeBuildInputs = [pkgconfig];
+  nativeBuildInputs = [pkg-config];
   buildInputs = [libX11];
   postInstall = ''
     mkdir -p $out/bin;
